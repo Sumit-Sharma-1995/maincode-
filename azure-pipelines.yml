@@ -17,8 +17,8 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/parent'
-    backendServiceArm: 'meraphlaconnection'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/Parent'
+    backendServiceArm: 'yaml-pipeline-workload'
     backendAzureRmStorageAccountName: 'pipelinestgnew'
     backendAzureRmContainerName: 'pipelinecon'
     backendAzureRmKey: 'pipeline.terraform.tfstate'
@@ -28,13 +28,13 @@ steps:
     provider: 'azurerm'
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory).parent'
-    environmentServiceNameAzureRM: 'meraphlaconnection'
+    environmentServiceNameAzureRM: 'yaml-pipeline-workload'
 
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory/parent'
-    environmentServiceNameAzureRM: 'meraphlaconnection'
+    environmentServiceNameAzureRM: 'yaml-pipeline-workload'
 
 
