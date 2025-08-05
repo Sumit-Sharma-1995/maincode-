@@ -17,7 +17,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/Parent'
+    workingDirectory: 'D:\agent\_work\6\s\Parent'
     backendServiceArm: 'yaml-pipeline-workload'
     backendAzureRmStorageAccountName: 'pipelinestgnew'
     backendAzureRmContainerName: 'pipelinecon'
@@ -27,14 +27,14 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    workingDirectory: '$(System.DefaultWorkingDirectory).parent'
+    workingDirectory: 'D:\agent\_work\6\s\Parent'
     environmentServiceNameAzureRM: 'yaml-pipeline-workload'
 
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
     command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory/parent'
+    workingDirectory: 'D:\agent\_work\6\s\Parent'
     environmentServiceNameAzureRM: 'yaml-pipeline-workload'
 
 
